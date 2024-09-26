@@ -7,27 +7,60 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
+  void rolldice() {
+    //codice da eseguire
+  }
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Flutter Dice Game',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('First App'),
+          title: const Text('Dice Game'),
         ),
-        body: const Center(
+        body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                'Hello World!',
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Image.asset(
+                    'assets/dice_img/dice-4.png',
+                    width: 150,
+                  ),
+                  Image.asset(
+                    'assets/dice_img/dice-4.png',
+                    width: 150,
+                  ),
+                ],
               ),
-              Text(
-                'It\'s time to learn Flutter!',
+              const SizedBox(
+                height: 50,
               ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton(
+                      onPressed: rolldice,
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor:
+                              const Color.fromARGB(255, 110, 110, 110),
+                          side: const BorderSide(color: Colors.blue, width: 3),
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 24, vertical: 12),
+                          foregroundColor:
+                              const Color.fromARGB(255, 186, 224, 255),
+                          textStyle: const TextStyle(
+                            fontSize: 28,
+                            fontWeight: FontWeight.bold,
+                          )),
+                      child: const Text('Roll Dice')),
+                ],
+              )
             ],
           ),
         ),

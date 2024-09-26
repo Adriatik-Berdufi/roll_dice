@@ -5,15 +5,8 @@ void main() {
   runApp(const MyApp());
 }
 
-var activeDiceImg = 'assets/dice_img/dice-4.png';
-
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  void rolldice() {
-    activeDiceImg = 'assets/dice_img/dice-1.png';
-    debugPrint(activeDiceImg);
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +18,23 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(
           title: const Text('Dice Game'),
+          titleTextStyle: TextStyle(
+            fontSize: 36,
+            color: Colors.blueAccent,
+            fontWeight: FontWeight.bold,
+            shadows: [
+              Shadow(
+                color: Colors.black.withOpacity(0.6), // Colore dell'ombra
+                offset: const Offset(2.5, 2.5), // Spostamento dell'ombra
+                blurRadius: 7.0, // Raggio di sfocatura dell'ombra
+              ),
+            ],
+          ),
         ),
         body: const Center(
           child: DiceRoller(),
         ),
+        backgroundColor: const Color.fromARGB(255, 129, 154, 165),
       ),
     );
   }
